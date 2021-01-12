@@ -7,6 +7,9 @@
     'navbar'
     'header-content';
 }
+.containerSubHeader {
+  z-index: 300;
+}
 .bgVideo {
   background: #242a35;
   background-color: #242a35;
