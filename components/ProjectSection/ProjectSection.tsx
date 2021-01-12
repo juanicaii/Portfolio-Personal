@@ -128,8 +128,7 @@ const ProjectSection = ({ section }: IProjectSection) => {
       <TitleSection
         section={section}
         title="Projectos"
-        description=" Lorem Ipsum is simply dummy text of the printing and typesetting industry Ipsum has been
-          the industry"
+        description="Los proyectos en los que participe"
       />
       <div className={styles.container}>
         {projects.map((project) => (

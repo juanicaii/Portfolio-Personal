@@ -23,7 +23,7 @@ const ContactSection = ({ section }: IContactSection) => {
         <TitleSection
           section={section}
           title="Contactame"
-          description="Lorem Ipsum is simply dummy text of the printing and typesetting industry Ipsum has been the industry"
+          description="No dudes en enviarme un mail o un mensaje"
         />
       </div>
       <div className={styles.infoPersonal}>
