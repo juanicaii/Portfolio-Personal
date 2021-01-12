@@ -1,7 +1,7 @@
 .header {
   background-color: transparent;
   display: grid;
-  z-index: 3;
+  z-index: 3000;
   min-height: 100vh;
   grid-template-areas:
     'navbar'
