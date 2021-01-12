@@ -122,6 +122,7 @@ const ProjectSection = ({ section }: IProjectSection) => {
       ],
     },
   ]
+
   return (
     <div>
       <TitleSection

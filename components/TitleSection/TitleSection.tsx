@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUser, faImages } from '@fortawesome/free-solid-svg-icons'
+import { faUser, faImages, faIdCard } from '@fortawesome/free-solid-svg-icons'
 import styles from './TitleSection.module.css'
 
 interface ITitleSectionProps {
@@ -12,7 +12,9 @@ const TitleSection = ({ section, title, description }: ITitleSectionProps) => {
   return (
     <div className={styles.section}>
       <div className={styles.icon}>
-        <FontAwesomeIcon icon={section === 'about' ? faUser : faImages} />
+        <FontAwesomeIcon
+          icon={section === 'about' ? faUser : section === 'projects' ? faImages : faIdCard}
+        />
         <div className={styles.line}>
           <hr />
         </div>

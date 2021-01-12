@@ -20,7 +20,7 @@ const AboutSection = ({ section }: IAboutSection) => {
     { key: 2, name: 'Tecnologias' },
   ]
   return (
-    <div style={{ marginTop: 50, margin: '0 auto ' }}>
+    <div style={{ marginTop: 100, margin: '0 auto ' }}>
       <TitleSection
         title="Acerca de mi"
         section={section}

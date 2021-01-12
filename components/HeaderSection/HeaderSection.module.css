@@ -1,7 +1,7 @@
 .header {
   background-color: transparent;
   display: grid;
-  z-index: 1;
+  z-index: 3;
   min-height: 100vh;
   grid-template-areas:
     'navbar'
@@ -33,6 +33,7 @@
   padding: 1em 5em;
   align-items: center;
   grid-area: navbar;
+  z-index: 3;
   height: 100px;
 }
 
@@ -114,6 +115,7 @@
   }
   .subHeader {
     height: 50px;
+    padding: 1em 1em;
   }
   .menu {
     display: block;
@@ -125,16 +127,19 @@
     position: fixed;
     width: 100%;
     min-height: 50px;
+    box-shadow: 0 10px 33px rgba(0, 0, 0, 0.1);
   }
   .navMobile {
-    padding: 0.5em 2.5em;
+    padding: 0.5em 1em;
   }
   .navMobile ul {
     list-style: none;
+    padding: 0;
   }
   .navMobile ul li {
-    font-size: 1.1em;
-    margin: 0.5em 0;
+    font-size: 1em;
+    margin: 1em 0;
+    cursor: pointer;
   }
   .nav ul {
     display: none;

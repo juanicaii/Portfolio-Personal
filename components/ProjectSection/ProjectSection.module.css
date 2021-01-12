@@ -2,6 +2,8 @@
   margin: 5em;
   display: flex;
   flex-wrap: wrap;
+  margin: 5em auto;
+  justify-content: space-around;
 }
 .project {
   width: 300px;
@@ -9,6 +11,9 @@
   overflow: hidden;
   cursor: pointer;
   margin: 0 10px 10px 10px;
+}
+.front {
+  z-index: -1;
 }
 .back {
   width: 300px;

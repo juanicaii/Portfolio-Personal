@@ -12,6 +12,7 @@ const HeaderSection = () => {
     { name: 'Inicio', url: '/' },
     { name: 'Acerca', url: '/acerca' },
     { name: 'Proyectos', url: '/proyectos' },
+    { name: 'Contacto', url: '/contacto' },
   ]
 
   const openNavbar = () => {
