@@ -1,10 +1,10 @@
 import { useInView } from 'react-intersection-observer'
-import { motion, useAnimation } from 'framer-motion'
-import { useState, useEffect } from 'react'
+import { useAnimation, AnimationControls } from 'framer-motion'
+import { useEffect } from 'react'
 
-const useScroll = () => {
+const useScroll = (): [AnimationControls, () => void] => {
   const animation = useAnimation()
-  const [ref, inView, entry] = useInView({ threshold: 0.1 })
+  const [ref, inView] = useInView({ threshold: 0.1 })
 
   useEffect(() => {
     if (inView) {
