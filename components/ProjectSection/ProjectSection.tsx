@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
+import ClipLoader from 'react-spinners/ClipLoader'
+import Modal from 'react-modal'
 import styles from './ProjectSection.module.css'
 import TitleSection from '../TitleSection'
 import useScroll from '../../hooks/useScroll'
@@ -13,18 +15,17 @@ interface IProject {
   desc: string
   tecnology: any[]
   link: string
+  image: string
 }
 
-const Project = ({ title, desc, tecnology, link }: IProject) => {
+const Project = ({ title, desc, tecnology, link, image }: IProject) => {
   const [isHover, setIsHover] = useState(false)
   const [animation, ref] = useScroll()
-  const openProject = (url: string) => {
-    window.open(url, '_blank')
-  }
+
   return (
     <motion.div
       onClick={() => {
-        openProject(link)
+        window.open(link, '_blank')
       }}
       animate={animation}
       ref={ref}
@@ -46,7 +47,7 @@ const Project = ({ title, desc, tecnology, link }: IProject) => {
           </p>
           <div className={styles.tec}>
             {tecnology.map((tecn) => (
-              <p>{tecn.tec}</p>
+              <p key={tecn.tec}>{tecn.tec}</p>
             ))}
           </div>
         </div>
@@ -56,7 +57,7 @@ const Project = ({ title, desc, tecnology, link }: IProject) => {
         className={styles.front}
         transition={{ duration: 0.6 }}
       >
-        <img width="300" src="/projects/img-1.jpg" alt="" />
+        <img width="350" height="225" src={`/projects/${image}`} alt="" />
       </motion.div>
     </motion.div>
   )
@@ -76,6 +77,7 @@ const ProjectSection = ({ section }: IProjectSection) => {
         { tec: 'MYSQL' },
       ],
       link: 'https://amaip.com.ar/',
+      image: 'amaip.jpg',
     },
     {
       title: 'Torneo Interfederativo Judo',
@@ -89,6 +91,7 @@ const ProjectSection = ({ section }: IProjectSection) => {
         { tec: 'MYSQL' },
       ],
       link: 'https://judointerfederativo.com.ar/',
+      image: 'judo.jpg',
     },
     {
       title: 'SimRacing Fixture',
@@ -102,18 +105,21 @@ const ProjectSection = ({ section }: IProjectSection) => {
         { tec: 'MYSQL' },
       ],
       link: 'https://simracingfixture.com/',
+      image: 'simracing.jpg',
     },
     {
       title: 'Flobella Inmobiliario',
       desc: 'Diseño, Frontend y Backend',
       tecnology: [{ tec: 'REACTJS' }, { tec: 'NODEJS' }, { tec: 'SEQUELIZE' }, { tec: 'MYSQL' }],
       link: 'https://marketinginmobiliario.flobellamedia.site',
+      image: 'flobellaI.jpg',
     },
     {
       title: 'Flobella Media',
       desc: 'Diseño, Frontend y Backend',
       tecnology: [{ tec: 'REACTJS' }, { tec: 'NODEJS' }, { tec: 'SEQUELIZE' }, { tec: 'MYSQL' }],
       link: 'https://flobellamedia.site/',
+      image: 'flobella.jpg',
     },
   ]
 
@@ -128,6 +134,8 @@ const ProjectSection = ({ section }: IProjectSection) => {
       <div className={styles.container}>
         {projects.map((project) => (
           <Project
+            image={project.image}
+            key={project.title}
             title={project.title}
             desc={project.desc}
             tecnology={project.tecnology}

@@ -6,8 +6,9 @@
   justify-content: space-around;
 }
 .project {
-  width: 300px;
+  width: 350px;
   display: flex;
+
   overflow: hidden;
   cursor: pointer;
   margin: 0 10px 10px 10px;
@@ -16,7 +17,8 @@
   z-index: -1;
 }
 .back {
-  width: 300px;
+  width: 350px;
+
   overflow: hidden;
   height: 224px;
   z-index: -1;
@@ -51,4 +53,13 @@
 }
 .tec p {
   font-size: 0.7em;
+}
+
+@media (max-width: 370px) {
+  .project {
+    width: 300px;
+  }
+  .back {
+    width: 300px;
+  }
 }

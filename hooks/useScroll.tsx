@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 
 const useScroll = () => {
   const animation = useAnimation()
-  const [ref, inView, entry] = useInView({ threshold: 0.1, trackVisibility: true, delay: 10 })
+  const [ref, inView, entry] = useInView({ threshold: 0.1 })
 
   useEffect(() => {
     if (inView) {

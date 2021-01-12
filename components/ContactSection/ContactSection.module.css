@@ -6,10 +6,17 @@
 .infoPersonal {
   display: flex;
   justify-content: space-around;
+  align-content: center;
 }
 .info {
   text-align: center;
-  margin: 3em;
+  width: 50%;
   color: white;
   display: block;
+}
+
+@media (max-width: 420px) {
+  .info span {
+    font-size: 0.7em;
+  }
 }

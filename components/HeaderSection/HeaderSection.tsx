@@ -62,10 +62,18 @@ const HeaderSection = () => {
           <span>Desarollador FullStack JavaScript</span>
           <h1>Juan Ignacio Seijas</h1>
           <p>
-            Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por
-            scientie, musica, sport etc, litot Europa usa li sam vocabular.
+            Soy un Programador y estudiante de analista en sistemas con mas de 1 año de experiencia
+            haciendo paginas webs responsives
           </p>
-          <button>Descargar CV</button>
+          <button
+            style={{ cursor: 'pointer' }}
+            onClick={() => {
+              window.open('/curriculum.pdf', '_blank')
+            }}
+            type="button"
+          >
+            Descargar CV
+          </button>
         </div>
       </div>
     </div>

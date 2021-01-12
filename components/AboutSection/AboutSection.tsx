@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react'
+import { motion } from 'framer-motion'
 import styles from './AboutSection.module.css'
 import TitleSection from '../TitleSection'
 import AboutTab from '../AboutTab'
 import SkillsTab from '../SkillsTab'
 import useScroll from '../../hooks/useScroll'
 import scroll from '../../animation'
-import { motion } from 'framer-motion'
 
 interface IAboutSection {
   section: string
@@ -13,7 +13,7 @@ interface IAboutSection {
 
 const AboutSection = ({ section }: IAboutSection) => {
   const [animation, ref] = useScroll()
-  const [selected,setSelected] = useState(1)
+  const [selected, setSelected] = useState(1)
   const selectTab = (key: number) => {
     setSelected(key)
   }
@@ -24,21 +24,21 @@ const AboutSection = ({ section }: IAboutSection) => {
   ]
   return (
     <motion.div
+      className={styles.acerca}
       variants={scroll}
       animate={animation}
       ref={ref}
       id="acerca"
-      style={{ marginTop: 100, margin: '0 auto ' }}
     >
       <TitleSection
         title="Acerca de mi"
         section={section}
-        description=" Lorem Ipsum is simply dummy text of the printing and typesetting industry Ipsum has been
-          the industry"
+        description="Te cuento un poco de mi historia como programador"
       />
       <div className={styles.tabs}>
         {tabs.map((tab) => (
           <div
+            key={tab.key}
             onClick={() => {
               selectTab(tab.key)
             }}

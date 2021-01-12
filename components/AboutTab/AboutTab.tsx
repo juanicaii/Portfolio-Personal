@@ -12,15 +12,14 @@ const AboutTab = () => {
         </h5>
 
         <p>
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-          laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
-          architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
-          aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
+          Siempre supe que mi vida estaba relacionada con la tecnologia,hasta que encontre la
+          programacion y no me separe mas. Aprendi la logica en la facultad en C#, pero como yo era
+          muy ansioso, y queria aprender, me mande de lleno a javascript.
           <br />
           <br />
-          voluptatem sequi nesciunt. Li Europan lingues es membres del sam familie. Lor separat
-          existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular.
-          Li lingues differe solmen in li grammatica, e li plu commun vocabules.
+          Aprendi de forma autodidacta muchas librerias y frameworks de javascript, como por ejemplo
+          React, NodeJS y ya hace mas de 1 año que vengo realizando paginas web responsives de forma
+          freelance.
         </p>
       </div>
     </div>
