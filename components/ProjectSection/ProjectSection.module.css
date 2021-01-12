@@ -50,6 +50,7 @@
 .tec {
   display: flex;
   text-align: center;
+  margin-left: 25px;
 }
 .tec p {
   font-size: 0.7em;
