@@ -2,7 +2,7 @@ const scroll = {
   hidden: {
     opacity: 0,
     scale: 1,
-    y: 50,
+    y: 100,
   },
   show: {
     opacity: 1,
