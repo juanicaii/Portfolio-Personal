@@ -1,7 +1,9 @@
+import { useState } from 'react'
+import { motion } from 'framer-motion'
 import styles from './ProjectSection.module.css'
 import TitleSection from '../TitleSection'
-import { motion } from 'framer-motion'
-import { useState } from 'react'
+import useScroll from '../../hooks/useScroll'
+import scroll from '../../animation'
 
 interface IProjectSection {
   section: string
@@ -10,12 +12,23 @@ interface IProject {
   title: string
   desc: string
   tecnology: any[]
+  link: string
 }
 
-const Project = ({ title, desc, tecnology }: IProject) => {
+const Project = ({ title, desc, tecnology, link }: IProject) => {
   const [isHover, setIsHover] = useState(false)
+  const [animation, ref] = useScroll()
+  const openProject = (url: string) => {
+    window.open(url, '_blank')
+  }
   return (
     <motion.div
+      onClick={() => {
+        openProject(link)
+      }}
+      animate={animation}
+      ref={ref}
+      variants={scroll}
       onHoverStart={() => {
         setIsHover(true)
       }}
@@ -26,9 +39,11 @@ const Project = ({ title, desc, tecnology }: IProject) => {
     >
       <div className={styles.back}>
         <div className={styles.desc}>
-          <span>Amaip</span>
-          <p>Diseño, Frontend y Backend</p>
-          <p>Tecnologias utilizadas</p>
+          <span>{title}</span>
+          <p>{desc}</p>
+          <p>
+            <strong>Tecnologias utilizadas</strong>
+          </p>
           <div className={styles.tec}>
             {tecnology.map((tecn) => (
               <p>{tecn.tec}</p>
@@ -60,9 +75,10 @@ const ProjectSection = ({ section }: IProjectSection) => {
         { tec: 'JQUERY' },
         { tec: 'MYSQL' },
       ],
+      link: 'https://amaip.com.ar/',
     },
     {
-      title: 'Amaip',
+      title: 'Torneo Interfederativo Judo',
       desc: 'Diseño, Frontend y Backend',
       tecnology: [
         { tec: 'HTML' },
@@ -72,9 +88,10 @@ const ProjectSection = ({ section }: IProjectSection) => {
         { tec: 'JQUERY' },
         { tec: 'MYSQL' },
       ],
+      link: 'https://judointerfederativo.com.ar/',
     },
     {
-      title: 'Amaip',
+      title: 'SimRacing Fixture',
       desc: 'Diseño, Frontend y Backend',
       tecnology: [
         { tec: 'HTML' },
@@ -84,47 +101,24 @@ const ProjectSection = ({ section }: IProjectSection) => {
         { tec: 'JQUERY' },
         { tec: 'MYSQL' },
       ],
+      link: 'https://simracingfixture.com/',
     },
     {
-      title: 'Amaip',
+      title: 'Flobella Inmobiliario',
       desc: 'Diseño, Frontend y Backend',
-      tecnology: [
-        { tec: 'HTML' },
-        { tec: 'JS' },
-        { tec: 'PHP' },
-        { tec: 'CSS' },
-        { tec: 'JQUERY' },
-        { tec: 'MYSQL' },
-      ],
+      tecnology: [{ tec: 'REACTJS' }, { tec: 'NODEJS' }, { tec: 'SEQUELIZE' }, { tec: 'MYSQL' }],
+      link: 'https://marketinginmobiliario.flobellamedia.site',
     },
     {
-      title: 'Amaip',
+      title: 'Flobella Media',
       desc: 'Diseño, Frontend y Backend',
-      tecnology: [
-        { tec: 'HTML' },
-        { tec: 'JS' },
-        { tec: 'PHP' },
-        { tec: 'CSS' },
-        { tec: 'JQUERY' },
-        { tec: 'MYSQL' },
-      ],
-    },
-    {
-      title: 'Amaip',
-      desc: 'Diseño, Frontend y Backend',
-      tecnology: [
-        { tec: 'HTML' },
-        { tec: 'JS' },
-        { tec: 'PHP' },
-        { tec: 'CSS' },
-        { tec: 'JQUERY' },
-        { tec: 'MYSQL' },
-      ],
+      tecnology: [{ tec: 'REACTJS' }, { tec: 'NODEJS' }, { tec: 'SEQUELIZE' }, { tec: 'MYSQL' }],
+      link: 'https://flobellamedia.site/',
     },
   ]
 
   return (
-    <div>
+    <div id="proyectos">
       <TitleSection
         section={section}
         title="Projectos"
@@ -133,7 +127,12 @@ const ProjectSection = ({ section }: IProjectSection) => {
       />
       <div className={styles.container}>
         {projects.map((project) => (
-          <Project title={project.title} desc={project.desc} tecnology={project.tecnology} />
+          <Project
+            title={project.title}
+            desc={project.desc}
+            tecnology={project.tecnology}
+            link={project.link}
+          />
         ))}
       </div>
     </div>

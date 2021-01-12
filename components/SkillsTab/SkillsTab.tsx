@@ -1,23 +1,29 @@
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar'
+import { useState } from 'react'
 import styles from './SkillsTab.module.css'
-
+import ProgressProvider from '../ProgressProvider'
 interface IProgressBar {
   tec: string
   percent: number
 }
+
 const ProgressBar = ({ tec, percent }: IProgressBar) => {
   return (
     <div className={styles.progress}>
       <p style={{ textAlign: 'center' }}>{tec}</p>
-      <CircularProgressbar
-        styles={buildStyles({
-          pathColor: `var(--colorRed)`,
-          textColor: 'black',
-        })}
-        className={styles.width}
-        value={percent}
-        text={`${percent}%`}
-      />
+      <ProgressProvider valueStart={10} valueEnd={percent}>
+        {(value) => (
+          <CircularProgressbar
+            styles={buildStyles({
+              pathColor: `var(--colorRed)`,
+              textColor: 'black',
+            })}
+            value={value}
+            className={styles.width}
+            text={`${value}%`}
+          />
+        )}
+      </ProgressProvider>
     </div>
   )
 }

@@ -1,0 +1,16 @@
+.footer {
+  background-color: white;
+  height: 200px;
+  text-align: center;
+  color: black;
+}
+.footer svg {
+  margin-top: 3em;
+}
+.footer .logo svg path {
+  fill: var(--colorRed);
+}
+.footerIcon svg {
+  margin: 10px;
+  cursor: pointer;
+}

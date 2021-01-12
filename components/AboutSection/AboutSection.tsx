@@ -1,16 +1,19 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import styles from './AboutSection.module.css'
 import TitleSection from '../TitleSection'
 import AboutTab from '../AboutTab'
 import SkillsTab from '../SkillsTab'
+import useScroll from '../../hooks/useScroll'
+import scroll from '../../animation'
+import { motion } from 'framer-motion'
 
 interface IAboutSection {
   section: string
 }
 
 const AboutSection = ({ section }: IAboutSection) => {
-  const [selected, setSelected] = useState(1)
-
+  const [animation, ref] = useScroll()
+  const [selected,setSelected] = useState(1)
   const selectTab = (key: number) => {
     setSelected(key)
   }
@@ -20,7 +23,13 @@ const AboutSection = ({ section }: IAboutSection) => {
     { key: 2, name: 'Tecnologias' },
   ]
   return (
-    <div style={{ marginTop: 100, margin: '0 auto ' }}>
+    <motion.div
+      variants={scroll}
+      animate={animation}
+      ref={ref}
+      id="acerca"
+      style={{ marginTop: 100, margin: '0 auto ' }}
+    >
       <TitleSection
         title="Acerca de mi"
         section={section}
@@ -43,7 +52,7 @@ const AboutSection = ({ section }: IAboutSection) => {
       <div style={{ minHeight: 550, marginTop: 33 }}>
         {selected === 1 ? <AboutTab /> : <SkillsTab />}
       </div>
-    </div>
+    </motion.div>
   )
 }
 export default AboutSection

@@ -1,25 +1,26 @@
-import styles from './HeaderSection.module.css'
+import { SlideDown } from 'react-slidedown'
 import { useState } from 'react'
-import Logo from '../Logo'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
-import { SlideDown } from 'react-slidedown'
+import Link from 'next/link'
+import styles from './HeaderSection.module.css'
+import Logo from '../Logo'
 
 const HeaderSection = () => {
   const [isOpen, setIsOpen] = useState(false)
 
   const links = [
-    { name: 'Inicio', url: '/' },
-    { name: 'Acerca', url: '/acerca' },
-    { name: 'Proyectos', url: '/proyectos' },
-    { name: 'Contacto', url: '/contacto' },
+    { name: 'Inicio', url: '/#inicio' },
+    { name: 'Acerca', url: '/#acerca' },
+    { name: 'Proyectos', url: '/#proyectos' },
+    { name: 'Contacto', url: '/#contacto' },
   ]
 
   const openNavbar = () => {
     setIsOpen(!isOpen)
   }
   return (
-    <>
+    <div id="inicio">
       <video src="/bg.mp4" loop muted autoPlay className={styles.video} />
       <div className={styles.bgVideo} />
       <div className={`${styles.header}`}>
@@ -35,17 +36,21 @@ const HeaderSection = () => {
               </span>
               <ul>
                 {links.map((link) => (
-                  <li key={link.name}>{link.name}</li>
+                  <li key={link.name}>
+                    <Link href={link.url}>{link.name}</Link>
+                  </li>
                 ))}
               </ul>
             </div>
           </div>
-          <SlideDown className={'my-dropdown-slidedown'}>
+          <SlideDown className="my-dropdown-slidedown">
             {isOpen ? (
               <div className={styles.navMobile}>
                 <ul>
                   {links.map((link) => (
-                    <li key={link.name}>{link.name}</li>
+                    <li key={link.name}>
+                      <Link href={link.url}>{link.name}</Link>
+                    </li>
                   ))}
                 </ul>
               </div>
@@ -63,7 +68,7 @@ const HeaderSection = () => {
           <button>Descargar CV</button>
         </div>
       </div>
-    </>
+    </div>
   )
 }
 
