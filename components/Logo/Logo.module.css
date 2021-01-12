@@ -1,0 +1,20 @@
+.logo {
+  width: 50px;
+  cursor: pointer;
+}
+.logo path {
+  fill: white;
+}
+.logo:hover path {
+  fill: var(--colorRed);
+  transition: all ease-in 0.3s;
+}
+
+@media (max-width: 992px) {
+  .logo {
+    width: 30px;
+  }
+  .logo path {
+    fill: var(--colorRed);
+  }
+}

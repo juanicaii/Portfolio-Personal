@@ -1,3 +1,13 @@
+@font-face {
+  font-family: 'Raleway';
+  src: url('../public/fonts/Raleway-VariableFont_wght.ttf');
+}
+
+:root {
+  --raleway: Raleway;
+  --colorRed: #ff546c;
+}
+
 html,
 body {
   padding: 0;
