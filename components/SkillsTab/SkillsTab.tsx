@@ -34,8 +34,9 @@ const SkillsTab = () => {
       <ProgressBar tec="NodeJS" percent={75} />
       <ProgressBar tec="HTML" percent={80} />
       <ProgressBar tec="CSS" percent={70} />
-      <ProgressBar tec="MySQL" percent={80} />
+      <ProgressBar tec="SQL" percent={80} />
       <ProgressBar tec="PHP" percent={65} />
+      <ProgressBar tec="GIT" percent={75} />
     </div>
   )
 }
