@@ -1,12 +1,11 @@
-import { MouseEventHandler, useState } from 'react'
+import { useState } from 'react'
 import styles from './AboutSection.module.css'
 import TitleSection from '../TitleSection'
+import AboutTab from '../AboutTab'
+import SkillsTab from '../SkillsTab'
 
 interface IAboutSection {
   section: string
-}
-interface ISelectTab {
-  key: number
 }
 
 const AboutSection = ({ section }: IAboutSection) => {
@@ -21,8 +20,13 @@ const AboutSection = ({ section }: IAboutSection) => {
     { key: 2, name: 'Tecnologias' },
   ]
   return (
-    <div>
-      <TitleSection title="Acerca de mi" section={section} />
+    <div style={{ marginTop: 50, margin: '0 auto ' }}>
+      <TitleSection
+        title="Acerca de mi"
+        section={section}
+        description=" Lorem Ipsum is simply dummy text of the printing and typesetting industry Ipsum has been
+          the industry"
+      />
       <div className={styles.tabs}>
         {tabs.map((tab) => (
           <div
@@ -34,6 +38,10 @@ const AboutSection = ({ section }: IAboutSection) => {
             <p>{tab.name}</p>
           </div>
         ))}
+      </div>
+
+      <div style={{ minHeight: 550, marginTop: 33 }}>
+        {selected === 1 ? <AboutTab /> : <SkillsTab />}
       </div>
     </div>
   )

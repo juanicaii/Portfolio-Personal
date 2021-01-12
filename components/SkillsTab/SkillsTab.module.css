@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.progress {
+  text-align: center;
+  width: 300px;
+  margin: 2em auto;
+}
+.width {
+  width: 8em;
+}

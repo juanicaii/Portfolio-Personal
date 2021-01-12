@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import HeaderSection from '../components/HeaderSection'
 import AboutSection from '../components/AboutSection'
+import ProjectSection from '../components/ProjectSection'
 
 export default function Home() {
   return (
@@ -9,7 +10,8 @@ export default function Home() {
         <title>Juan Ignacio Seijas</title>
       </Head>
       <HeaderSection />
-      <AboutSection section={'about'} />
+      <AboutSection section="about" />
+      <ProjectSection section="project" />
     </div>
   )
 }

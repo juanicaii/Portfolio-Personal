@@ -5,10 +5,12 @@
   background-color: #eee;
   justify-content: space-around;
   margin-top: 2em;
+  align-content: center;
 }
 
 .tab {
   width: 100%;
+  margin-bottom: 0;
   text-align: center;
   color: white;
   font-family: var(--raleway);
