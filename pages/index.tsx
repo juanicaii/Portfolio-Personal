@@ -9,7 +9,7 @@ export default function Home() {
         <title>Juan Ignacio Seijas</title>
       </Head>
       <HeaderSection />
-      <AboutSection />
+      <AboutSection section={'about'} />
     </div>
   )
 }

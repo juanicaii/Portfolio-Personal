@@ -1,0 +1,25 @@
+.icon svg {
+  font-size: 28px;
+  color: #6c757d;
+}
+
+.section {
+  text-align: center;
+}
+.line hr {
+  width: 35px;
+  transform: rotate(90deg);
+  margin: 25px auto;
+  color: var(--colorRed);
+}
+.title {
+  font-family: var(--raleway);
+  font-size: 1.7em;
+}
+.desc {
+  width: 70%;
+  margin: 0 auto;
+  font-family: var(--raleway);
+  color: #6c757d;
+  font-size: 0.8em;
+}
