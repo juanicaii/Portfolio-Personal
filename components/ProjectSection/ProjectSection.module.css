@@ -1,0 +1,49 @@
+.container {
+  margin: 5em;
+  display: flex;
+  flex-wrap: wrap;
+}
+.project {
+  width: 300px;
+  display: flex;
+  overflow: hidden;
+  cursor: pointer;
+  margin: 0 10px 10px 10px;
+}
+.back {
+  width: 300px;
+  overflow: hidden;
+  height: 224px;
+  z-index: -1;
+  background-color: #242a35;
+  position: absolute;
+}
+.desc {
+  margin: 3em 0;
+}
+.desc span {
+  color: white;
+  font-size: 1.3em;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  font-family: var(--raleway);
+  font-weight: bold;
+}
+.desc p {
+  margin: 1em;
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  font-family: var(--raleway);
+}
+.tec {
+  display: flex;
+  text-align: center;
+}
+.tec p {
+  font-size: 0.7em;
+}
