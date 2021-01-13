@@ -62,7 +62,7 @@ const HeaderSection = () => {
           <span>Desarollador FullStack JavaScript</span>
           <h1>Juan Ignacio Seijas</h1>
           <p>
-            Soy un Programador y estudiante de analista en sistemas con mas de 1 año de experiencia
+            Soy Programador y estudiante de analista en sistemas con mas de 1 año de experiencia
             haciendo paginas webs responsives
           </p>
           <button

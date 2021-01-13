@@ -37,7 +37,7 @@ const AboutSection = ({ section }: IAboutSection) => {
       <TitleSection
         title="Acerca de mi"
         section={section}
-        description="Te cuento un poco de mi historia como programador"
+        description="Te cuento un poco mi historia como programador"
       />
       <div className={styles.tabs}>
         {tabs.map((tab) => (
