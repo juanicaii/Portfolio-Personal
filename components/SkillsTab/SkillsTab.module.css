@@ -2,6 +2,8 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  max-width: 75%;
+  margin: 0 auto;
 }
 .progress {
   text-align: center;
@@ -9,5 +11,5 @@
   margin: 2em auto;
 }
 .width {
-  width: 8em;
+  width: 9em;
 }

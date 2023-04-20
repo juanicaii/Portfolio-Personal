@@ -24,4 +24,5 @@ a {
 
 * {
   box-sizing: border-box;
+  zoom: 101%;
 }

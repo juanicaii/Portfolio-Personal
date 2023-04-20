@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react'
-import { AnimationControls, motion } from 'framer-motion'
+import { useState } from 'react'
+import { motion } from 'framer-motion'
 import styles from './AboutSection.module.css'
 import TitleSection from '../TitleSection'
 import AboutTab from '../AboutTab'
@@ -9,10 +9,6 @@ import scroll from '../../animation'
 
 interface IAboutSection {
   section: string
-}
-
-interface IAnimation {
-  animation: AnimationControls
 }
 
 const AboutSection = ({ section }: IAboutSection) => {

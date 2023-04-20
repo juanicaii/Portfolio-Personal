@@ -62,13 +62,13 @@ const HeaderSection = () => {
           <span>Desarollador FullStack JavaScript</span>
           <h1>Juan Ignacio Seijas</h1>
           <p>
-            Soy Programador y estudiante de analista en sistemas con mas de 1 año de experiencia
-            haciendo paginas webs responsives
+            Soy Programador y estudiante de analista en sistemas con mas de 2 año de experiencia
+            como programador fullstack javascript
           </p>
           <button
             style={{ cursor: 'pointer' }}
             onClick={() => {
-              window.open('/curriculum.pdf', '_blank')
+              window.open('/cv Juan Ignacio Seijas.pdf', '_blank')
             }}
             type="button"
           >

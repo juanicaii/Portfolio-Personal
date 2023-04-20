@@ -18,8 +18,7 @@ const AboutTab = () => {
           <br />
           <br />
           Aprendi de forma autodidacta muchas librerias y frameworks de javascript, como por ejemplo
-          React, NodeJS y ya hace mas de 1 año que vengo realizando paginas web responsives de forma
-          freelance.
+          React, NodeJS y ya hace mas de 2 año que vengo trabajando como desarrollador fulltack
         </p>
       </div>
     </div>

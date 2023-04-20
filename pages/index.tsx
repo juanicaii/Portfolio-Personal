@@ -1,7 +1,4 @@
 import Head from 'next/head'
-import { useEffect } from 'react'
-import { useInView } from 'react-intersection-observer'
-import { motion, useAnimation } from 'framer-motion'
 
 import HeaderSection from '../components/HeaderSection'
 import AboutSection from '../components/AboutSection'

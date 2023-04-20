@@ -1,7 +1,7 @@
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar'
-import { useState } from 'react'
-import styles from './SkillsTab.module.css'
 import ProgressProvider from '../ProgressProvider'
+import styles from './SkillsTab.module.css'
+
 interface IProgressBar {
   tec: string
   percent: number
@@ -31,12 +31,13 @@ const SkillsTab = () => {
   return (
     <div className={styles.container}>
       <ProgressBar tec="ReactJS" percent={90} />
-      <ProgressBar tec="NodeJS" percent={75} />
-      <ProgressBar tec="HTML" percent={80} />
+      <ProgressBar tec="NodeJS" percent={90} />
+      <ProgressBar tec="VueJS" percent={60} />
+      <ProgressBar tec="React Native" percent={70} />
       <ProgressBar tec="CSS" percent={70} />
-      <ProgressBar tec="SQL" percent={80} />
-      <ProgressBar tec="PHP" percent={65} />
-      <ProgressBar tec="GIT" percent={75} />
+      <ProgressBar tec="SQL" percent={85} />
+      <ProgressBar tec="NoSQL" percent={80} />
+      <ProgressBar tec="GIT" percent={80} />
     </div>
   )
 }

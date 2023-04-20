@@ -1,7 +1,5 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import ClipLoader from 'react-spinners/ClipLoader'
-import Modal from 'react-modal'
 import styles from './ProjectSection.module.css'
 import TitleSection from '../TitleSection'
 import useScroll from '../../hooks/useScroll'
@@ -25,7 +23,9 @@ const Project = ({ title, desc, tecnology, link, image }: IProject) => {
   return (
     <motion.div
       onClick={() => {
-        window.open(link, '_blank')
+        if (link) {
+          window.open(link, '_blank')
+        }
       }}
       animate={animation}
       ref={ref}
@@ -38,27 +38,38 @@ const Project = ({ title, desc, tecnology, link, image }: IProject) => {
       }}
       className={styles.project}
     >
-      <div className={styles.back}>
-        <div className={styles.desc}>
-          <span>{title}</span>
+      <div
+        className={styles.cardImage}
+        style={{
+          backgroundImage: `url(/projects/${image})`,
+          backgroundRepeat: 'no-repeat',
+          border: '1px solid #242a35',
+          borderRadius: '1em',
+        }}
+      >
+        <motion.div
+          initial={{
+            opacity: 0,
+            y: 100,
+          }}
+          animate={{
+            opacity: isHover ? 1 : 0,
+            y: isHover ? 0 : 100,
+            transition: {
+              duration: 0.5,
+            },
+          }}
+          className={styles.info}
+        >
+          <h1>{title}</h1>
           <p>{desc}</p>
-          <p>
-            <strong>Tecnologias utilizadas</strong>
-          </p>
-          <div className={styles.tec}>
-            {tecnology.map((tecn) => (
-              <p key={tecn.tec}>{tecn.tec}</p>
+          <div className={styles.tecnology}>
+            {tecnology.map((tec) => (
+              <span key={tec.tec}>{tec.tec}</span>
             ))}
           </div>
-        </div>
+        </motion.div>
       </div>
-      <motion.div
-        animate={isHover ? { translateX: 350 } : { translateX: 0 }}
-        className={styles.front}
-        transition={{ duration: 0.6 }}
-      >
-        <img width="350" height="225" src={`/projects/${image}`} alt="" />
-      </motion.div>
     </motion.div>
   )
 }
@@ -67,7 +78,7 @@ const ProjectSection = ({ section }: IProjectSection) => {
   const projects = [
     {
       title: 'Amaip',
-      desc: 'Diseño, Frontend y Backend',
+      desc: 'Desarollo Fullstack',
       tecnology: [
         { tec: 'HTML' },
         { tec: 'JS' },
@@ -77,11 +88,11 @@ const ProjectSection = ({ section }: IProjectSection) => {
         { tec: 'MYSQL' },
       ],
       link: 'https://amaip.com.ar/',
-      image: 'amaip.jpg',
+      image: 'amaip.png',
     },
     {
       title: 'Torneo Interfederativo Judo',
-      desc: 'Diseño, Frontend y Backend',
+      desc: 'Desarollo Fullstack',
       tecnology: [
         { tec: 'HTML' },
         { tec: 'JS' },
@@ -91,40 +102,58 @@ const ProjectSection = ({ section }: IProjectSection) => {
         { tec: 'MYSQL' },
       ],
       link: 'https://judointerfederativo.com.ar/',
-      image: 'judo.jpg',
+      image: 'judo.png',
     },
-    // {
-    //   title: 'SimRacing Fixture',
-    //   desc: 'Diseño, Frontend y Backend',
-    //   tecnology: [
-    //     { tec: 'HTML' },
-    //     { tec: 'JS' },
-    //     { tec: 'PHP' },
-    //     { tec: 'CSS' },
-    //     { tec: 'JQUERY' },
-    //     { tec: 'MYSQL' },
-    //   ],
-    //   link: 'https://simracingfixture.com/',
-    //   image: 'simracing.jpg',
-    // },
+
     {
-      title: 'Flobella',
-      desc: 'Diseño, Frontend y Backend',
-      tecnology: [{ tec: 'NextJS' }],
-      link: 'https://www.flobellamedia.com',
-      image: 'flobellamind.jpg',
+      title: 'Flobella Media',
+      desc: 'Desarollo Frontend',
+      tecnology: [{ tec: 'ReactJs' }, { tec: 'NodeJS' }],
+      link: '',
+      image: 'flobellafront.png',
     },
-    // {
-    //   title: 'Flobella Media',
-    //   desc: 'Diseño, Frontend y Backend',
-    //   tecnology: [{ tec: 'REACTJS' }, { tec: 'NODEJS' }, { tec: 'SEQUELIZE' }, { tec: 'MYSQL' }],
-    //   link: 'https://flobellamedia.site/',
-    //   image: 'flobella.jpg',
-    // },
+    {
+      title: 'Cuadros Marcel',
+      desc: 'Desarollo web Ecommerce',
+      tecnology: [{ tec: 'Tienda Nube' }],
+      link: 'https://cuadrosmarcel.com.ar/',
+      image: 'cuadrosmarcel.png',
+    },
+    {
+      title: 'B21',
+      desc: 'Desarollo Fullstack Fintech',
+      tecnology: [{ tec: 'NextJs' }, { tec: 'NestJs' }, { tec: 'MongoDB' }],
+      link: 'https://b21.cl/',
+      image: 'b21.png',
+      border: 'none',
+    },
+    {
+      title: 'Tupaca',
+      desc: 'Empleado 1 Año como Desarollador Fullstack',
+      tecnology: [{ tec: 'ReactJs' }, { tec: 'NodeJs' }, { tec: 'React Native' }],
+      link: 'https://tupaca.com',
+      image: 'tupaca.png',
+      border: '1px solid #000',
+    },
+    {
+      title: 'Avalora',
+      desc: 'Empleado 1 Año como Desarollador Fullstack',
+      tecnology: [
+        { tec: 'ReactJs' },
+        { tec: 'NodeJs' },
+        { tec: 'React Native' },
+        { tec: 'Ionic' },
+        { tec: 'Vue' },
+        { tec: 'Python' },
+      ],
+      link: 'https://www.avalora.com/cl',
+      image: 'avalora.png',
+      border: 'none',
+    },
   ]
 
   return (
-    <div id="proyectos">
+    <div id="proyectos" className={styles.main}>
       <TitleSection
         section={section}
         title="Projectos"
