@@ -64,7 +64,10 @@
 
 .container {
   /* margin: 5em; */
-  display: inline-flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 30em);
+  grid-gap: 2em;
+  place-content: center;
   flex-wrap: wrap;
   margin: 5em auto;
   align-self: center;
